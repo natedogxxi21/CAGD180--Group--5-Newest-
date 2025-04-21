@@ -4,6 +4,12 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static UnityEditor.Timeline.TimelinePlaybackControls;
+/*
+ * Ravandi, Luca
+ * 4/17/2025
+ * Instructions for Menu UI
+ */
+
 
 public class Ui_Manager : MonoBehaviour
 {
@@ -16,7 +22,7 @@ public class Ui_Manager : MonoBehaviour
 
     public void PlayButtonPressed(int buildIndex)
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
     public void QuitButtonPressed(int buildIndex)

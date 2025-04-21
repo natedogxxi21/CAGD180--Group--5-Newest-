@@ -1,6 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/*
+ * Ravandi, Luca
+ * 4/19/2025
+ * Instructions for damaging effects
+ */
 
 public class Hazard : MonoBehaviour
 {

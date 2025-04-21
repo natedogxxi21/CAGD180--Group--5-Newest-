@@ -4,13 +4,18 @@ using UnityEngine;
 using static Cinemachine.DocumentationSortingAttribute;
 using UnityEngine.SceneManagement;
 using static UnityEditor.Timeline.TimelinePlaybackControls;
-
+/*
+ * Ravandi, Luca
+ * 4/20/2025
+ * Instructions for player speed, health, jump, damage, and move.
+ */
 public class Controller : MonoBehaviour
 {
     public int speed = 10;
     public float jumpForce = 10;
     public int health = 99;
     private new Rigidbody rigidbody;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,13 +75,13 @@ public class Controller : MonoBehaviour
   public void Damaged()
     {
         health -= 15;
+        GetComponent<MeshRenderer>().enabled = false;
 
         if (health <= 0)
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(2);
         }
     }
-
 }
 
 // GetComponent<MeshRenderer>().enabled = false;

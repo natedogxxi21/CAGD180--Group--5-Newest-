@@ -1,7 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Ravandi, Luca
+ * 4/20/2025
+ * Instructions for full HP
+ */
 public class MaxHpUp : MonoBehaviour
 {
     public float rotSpeed = 1;

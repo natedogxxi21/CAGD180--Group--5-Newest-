@@ -1,7 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
+ * Ravandi, Luca
+ * 4/18/2025
+ * Instructions for health pack
+ */
 public class HealthPickUp : MonoBehaviour
 {
     public float rotSpeed = 1;
