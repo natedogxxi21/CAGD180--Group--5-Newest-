@@ -10,7 +10,7 @@ public class Controller : MonoBehaviour
     public int speed = 10;
     public float jumpForce = 10;
     public int health = 99;
-    private Rigidbody rigidbody;
+    private new Rigidbody rigidbody;
     // Start is called before the first frame update
     void Start()
     {
