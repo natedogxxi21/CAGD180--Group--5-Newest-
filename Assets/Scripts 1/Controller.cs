@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Cinemachine.DocumentationSortingAttribute;
+using UnityEngine.SceneManagement;
+using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class Controller : MonoBehaviour
 {
     public int speed = 10;
     public float jumpForce = 10;
-    public int health = 100;
+    public int health = 99;
     private Rigidbody rigidbody;
     // Start is called before the first frame update
     void Start()
@@ -17,10 +20,12 @@ public class Controller : MonoBehaviour
     private void Update()
     {
         Jump();
+        if (health > 100)
+        {
+            health = 100;
+        }
     }
 
-
-    // Update is called once per frame
     void FixedUpdate()
     {
         Move();
@@ -62,4 +67,16 @@ public class Controller : MonoBehaviour
         return onGround;
     }
 
+  public void Damaged()
+    {
+        health -= 15;
+
+        if (health <= 0)
+        {
+            SceneManager.LoadScene(3);
+        }
+    }
+
 }
+
+// GetComponent<MeshRenderer>().enabled = false;

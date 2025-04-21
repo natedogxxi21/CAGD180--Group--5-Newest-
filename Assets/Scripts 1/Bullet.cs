@@ -6,21 +6,24 @@ public class Bullet : MonoBehaviour
 {
     [Header("Projectile Variables")]
     public float speed;
-    public bool goingleft;
+    public bool shooting;
 
 
     // Update is called once per frame
     void Update()
     {
-        if (goingleft == true)
+        if (shooting == true )
+            //And Player is facing Left) 
         {
             transform.position += speed * Vector3.left * Time.deltaTime;
         }
-        else
+        if (shooting == true )
+            //And Player is facing Right)
         {
             transform.position += speed * Vector3.right * Time.deltaTime;
         }
 
     }
+
 }
 

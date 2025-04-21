@@ -6,7 +6,8 @@ public class Shooting : MonoBehaviour
 {
     // Start is called before the first frame update
     [Header("Projectile Variables")]
-    public bool goingLeft = true;
+    public bool shooting = true;
+    //Changed "going left" to "shooting"
     [Header("Spawner Variables")]
     public GameObject projectilePrefab;
     public float timeBetweenShots;
@@ -25,8 +26,11 @@ public class Shooting : MonoBehaviour
             GameObject projectile = Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
             if (projectile.GetComponent<Bullet>())
             {
-                projectile.GetComponent<Bullet>().goingleft = goingLeft;
+                projectile.GetComponent<Bullet>().shooting = shooting;
+                //timeBetweenShots
+                //Disable hold down space bar for a longgg shot
             }
+
         }
     }
 }
