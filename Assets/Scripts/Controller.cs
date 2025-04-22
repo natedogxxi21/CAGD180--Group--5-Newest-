@@ -16,6 +16,10 @@ public class Controller : MonoBehaviour
     public int health = 99;
     private new Rigidbody rigidbody;
 
+    public float invincibilityDuration = 2f;
+    private bool isInvincible = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -74,14 +78,47 @@ public class Controller : MonoBehaviour
 
   public void Damaged()
     {
-        health -= 15;
-        GetComponent<MeshRenderer>().enabled = false;
-
-        if (health <= 0)
+        if (!isInvincible)
         {
-            SceneManager.LoadScene(2);
+            health -= 15;
+            GetComponent<MeshRenderer>().enabled = false;
+
+            if (health <= 0)
+            {
+                SceneManager.LoadScene(2);
+            }
+
+            StartCoroutine(InvincibilityFrames());
         }
     }
+
+    private IEnumerator InvincibilityFrames()
+    {
+        isInvincible = true;
+
+        float flashTime = 0.1f;
+        float elapsed = 0f;
+
+        MeshRenderer mesh = GetComponent<MeshRenderer>(); // <- this line declares 'mesh'
+
+        while (elapsed < invincibilityDuration)
+        {
+            if (mesh != null)
+            {
+                mesh.enabled = !mesh.enabled;
+            }
+            yield return new WaitForSeconds(flashTime);
+            elapsed += flashTime;
+        }
+
+        if (mesh != null)
+        {
+            mesh.enabled = true;
+        }
+
+        isInvincible = false;
+    }
+
 }
 
 // GetComponent<MeshRenderer>().enabled = false;
