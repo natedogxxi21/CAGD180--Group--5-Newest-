@@ -13,6 +13,19 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        other.transform.position = portalExit.position;
+        Transform rootTransform = other.transform.root;
+
+        //Resets Rigidbody
+        Rigidbody rb = rootTransform.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+
+        rootTransform.position = portalExit.position;
+
+        Debug.Log("Teleported: " + rootTransform.name);
     }
 }
+//other.transform.position = portalExit.position;
