@@ -6,7 +6,7 @@ public class Shooting_New : MonoBehaviour
 {
 
     public Transform firePoint;
-    public GameObject projectilePrefab;
+    public GameObject currentBulletPrefab;
 
     // Update is called once per frame
     void Update()
@@ -22,8 +22,13 @@ public class Shooting_New : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        Instantiate(currentBulletPrefab, firePoint.position, firePoint.rotation);
 
     }
-}
 
+    public void SetBulletType(GameObject newBulletPrefab)
+    {
+        currentBulletPrefab = newBulletPrefab;
+        Debug.Log("Bullet type changed to: " + newBulletPrefab.name);
+    }
+}
