@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Nathan
 public class JumpBoostPickup : MonoBehaviour
 {
     public float boostedJumpForce = 18f; // new jump force (doubled)

@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /*
- * Ravandi, Luca
- * 4/14/2025
+ * Ravandi, Luca / Marquez, Nathan
+ * 4/21/2025
  * Instructions for Portal
  */
 

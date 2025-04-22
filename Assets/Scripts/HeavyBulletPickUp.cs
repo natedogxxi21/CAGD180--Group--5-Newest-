@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Nathan
 public class HeavyBulletPickUp : MonoBehaviour
 {
     public GameObject bulletType;
